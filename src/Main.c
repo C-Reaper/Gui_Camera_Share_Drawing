@@ -14,7 +14,7 @@ void Setup(AlxWindow* w){
 void Update(AlxWindow* w){
     //Clear(BLACK);
 
-    Draw(GetMouse().x,GetMouse().y,WHITE);
+    Point_Render(WINDOW_STD_ARGS,GetMouse(),WHITE);
 
     ORLCamera_Set(&orlc,window.Buffer,window.Width,window.Height);
 }
