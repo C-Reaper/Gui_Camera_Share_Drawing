@@ -6,8 +6,8 @@
 ORLCamera orlc;
 
 void Setup(AlxWindow* w){
-    orlc = ORLCamera_New("/dev/video10",GetWidth(),GetHeight());
-
+    orlc = ORLCamera_New(10,"VirtualCamera",GetWidth(),GetHeight());
+    
     Clear(BLACK);
 }
 
