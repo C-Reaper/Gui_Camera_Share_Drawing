@@ -20,7 +20,7 @@ void Update(AlxWindow* w){
 }
 
 void Delete(AlxWindow* w){
-    ORLCamera_Free(&orlc);
+    ORLCamera_Close(&orlc);
 }
 
 int main(){
