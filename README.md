@@ -1,193 +1,77 @@
-# Gui_CameraShare
+# Project README
 
+## Overview
+This project is a simple camera application built using C/C++ and various libraries. The application utilizes the WindowEngine1.0 library for window management, RLCamera for camera functionality, and ImageFilter for image processing.
 
-## Project Overview
+## Features
+- Basic camera setup
+- Displaying the camera feed in a window
+- Point rendering based on mouse position
 
-This project implements specialized functionality related to camerashare.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for camerashare
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
+## Project Structure
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler (GCC)
 - Make utility
 - Standard development tools
+- Libraries:
+  - WindowEngine1.0
+  - RLCamera
+  - ImageFilter
+  - X11 for Linux
 
-### Build Steps
+## Build & Run
+### Building on Linux
+To build the project on a Linux system, follow these steps:
 
-1. Navigate to project directory:
 ```bash
-cd Gui_CameraShare
+cd /path/to/project
+make -f Makefile.linux all
 ```
 
-2. Build the project:
+This will compile the source code and generate an executable named `Main` in the `build/` directory.
+
+To execute the program:
 ```bash
-make -f Makefile.(os) all
+./build/Main
 ```
 
-3. For clean rebuild:
+### Building on Windows
+To build the project on a Windows system, follow these steps:
+
+1. Install MinGW or MSYS2 to get GCC.
+2. Open a command prompt and navigate to your project directory.
+3. Build the project with debugging symbols for easier debugging:
 ```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+make -f Makefile.windows alldebug
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
+This will compile the source code and generate an executable named `Main.exe` in the `build/` directory.
+
+To execute the program, simply run:
 ```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
+./build/Main.exe
+```
+
+### Building on WebAssembly
+To build the project for the web using Emscripten:
+
+1. Install Emscripten SDK.
+2. Set up your environment by running `emsdk_env.sh`.
+3. Navigate to your project directory and build with:
+```bash
+make -f Makefile.web all
+```
+
+This will compile the source code and generate an HTML file in the `build/` directory. You can run this using a web server or by opening it directly in a browser.
+
+To execute, use Emscripten's built-in server:
+```bash
+emrun --no_browser --port 8080 build/index.html
 ```
 
 ### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
+- `make -f Makefile.(os) all`: Compile the project.
+- `make -f Makefile.(os) do`: Compile and execute the project.
+- `make -f Makefile.(os) clean`: Clean up build artifacts.
 
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Gui_CameraShare/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+Replace `(os)` with `linux`, `windows`, or `web` depending on your target platform.
