@@ -15,7 +15,6 @@ void Update(AlxWindow* w){
     //Clear(BLACK);
 
     Point_Render(WINDOW_STD_ARGS,GetMouse(),WHITE);
-
     ORLCamera_Set(&orlc,window.Buffer,window.Width,window.Height);
 }
 
